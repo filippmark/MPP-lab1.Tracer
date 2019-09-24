@@ -5,18 +5,19 @@ using System.Text;
 
 namespace Tracer
 {
-    class Thread
+    class ThreadDetails
     {
         public int Id { get; private set; }
-        public List<Method> Methods { get; private set;} 
+        public long ExecutionTime { get; private set; }
         public Stack<Method> RunningMethods { get; private set; }
         public List<Method> RootMethods { get; private set; }
         
-        public Thread(int id)
+        public ThreadDetails(int id)
         {
             Id = id;
-            Methods = new List<Method>();
-
+            ExecutionTime = 0;
+            RunningMethods = new Stack<Method>();
+            RootMethods = new List<Method>();
         }
 
         public void StartTraceMethod(Method method)
@@ -35,6 +36,7 @@ namespace Tracer
             {
                 Method executedMethod = RunningMethods.Pop();
                 executedMethod.StopTrace();
+                ExecutionTime += executedMethod.ExecutionTime;
                 if (RunningMethods.Count == 1)
                 {
                     RootMethods.Add(executedMethod);

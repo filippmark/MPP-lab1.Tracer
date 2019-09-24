@@ -8,14 +8,14 @@ namespace Tracer
 {
     class Method
     {
-        public string Name { get; set; }
-        public string ClassName { get; set; }
+        public string Name { get; private set; }
+        public string ClassName { get; private set; }
         public long ExecutionTime { get; private set; }
-        public List<Method> NestedMethods { get; set; }
+        public List<Method> NestedMethods { get; private set; }
 
         private Stopwatch stopwatch;
 
-        public void MethodDetails(string name, string className)
+        public Method(string name, string className)
         {
             Name = name;
             ClassName = className;
