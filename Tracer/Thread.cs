@@ -10,7 +10,7 @@ namespace Tracer
         public int Id { get; private set; }
         public List<Method> Methods { get; private set;} 
         public Stack<Method> RunningMethods { get; private set; }
-        public Stack<List<Method>> ExecutedMethods { get; private set; }
+        public List<Method> RootMethods { get; private set; }
         
         public Thread(int id)
         {
@@ -24,18 +24,21 @@ namespace Tracer
             if (RunningMethods.Count() != 0 )
             {
                 Method topMethod = RunningMethods.Peek();
-                topMethod.addNestedMethod(method);
+                topMethod.AddNestedMethod(method);
             }
             RunningMethods.Push(method);
         }
           
-        public StopTraceMethod()
+        public void StopTraceMethod()
         {
-            if (RunningMethods.Count() != 0 )
+            if (RunningMethods.Count > 0)
             {
-                Method executedMethod = RunningMethods.Push();
+                Method executedMethod = RunningMethods.Pop();
                 executedMethod.StopTrace();
-                ExecutedMethods.Push(executedMethod);
+                if (RunningMethods.Count == 1)
+                {
+                    RootMethods.Add(executedMethod);
+                }
             }
         }
     }
