@@ -37,7 +37,7 @@ namespace TracerClasses
                 Method executedMethod = RunningMethods.Pop();
                 executedMethod.StopTrace();
                 ExecutionTime += executedMethod.ExecutionTime;
-                Console.WriteLine("{0} ms, {1} id", executedMethod.ExecutionTime, Id);
+                //Console.WriteLine("{0} ms, {1} id", executedMethod.ExecutionTime, Id);
                 if (RunningMethods.Count == 0)
                 {
                     RootMethods.Add(executedMethod);
