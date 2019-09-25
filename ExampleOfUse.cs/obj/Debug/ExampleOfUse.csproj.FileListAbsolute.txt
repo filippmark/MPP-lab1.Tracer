@@ -1,0 +1,7 @@
+C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\bin\Debug\ExampleOfUse.cs.dll
+C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\bin\Debug\ExampleOfUse.cs.pdb
+C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\bin\Debug\Tracer.dll
+C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\bin\Debug\Tracer.pdb
+C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.cs.dll
+C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.cs.pdb

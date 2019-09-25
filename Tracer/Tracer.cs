@@ -7,11 +7,16 @@ using System.Reflection;
 using System.Collections.Concurrent;
 using System.Threading;
 
-namespace Tracer
+namespace TracerClasses
 {
     public class Tracer : ITracer
     {
         private ConcurrentDictionary<int, ThreadDetails> threads;
+
+        public Tracer()
+        {
+            threads = new ConcurrentDictionary<int, ThreadDetails>();
+        }
 
         public void StartTrace()
         {
@@ -56,7 +61,7 @@ namespace Tracer
 
         public List<string> GetTraceResult()
         {
-
+            return new List<string>();
         }
 
 

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{878D104A-EEAA-4794-A303-92B0390D3E79}</ProjectGuid>
+    <ProjectGuid>{3DAAABE5-9D62-4F6A-A1F7-30484A290950}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TracerClasses</RootNamespace>
-    <AssemblyName>Tracer</AssemblyName>
+    <RootNamespace>ExampleOfUse.cs</RootNamespace>
+    <AssemblyName>ExampleOfUse.cs</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,14 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITracer.cs" />
-    <Compile Include="Method.cs" />
+    <Compile Include="Example.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serializer\ISerialize.cs" />
-    <Compile Include="Serializer\JSONSerializer.cs" />
-    <Compile Include="Serializer\XMLSerializer.cs" />
-    <Compile Include="ThreadDetails.cs" />
-    <Compile Include="Tracer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tracer\Tracer.csproj">
+      <Project>{878D104A-EEAA-4794-A303-92B0390D3E79}</Project>
+      <Name>Tracer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

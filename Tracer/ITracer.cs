@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Tracer
+namespace TracerClasses
 {
     interface ITracer
     {
@@ -16,5 +16,4 @@ namespace Tracer
         // получить результаты измерений
         List<string> GetTraceResult();
     }
-    
 }

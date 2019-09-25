@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 
-namespace Tracer
+namespace TracerClasses
 {
-    class Method
+    public class Method
     {
         public string Name { get; private set; }
         public string ClassName { get; private set; }
