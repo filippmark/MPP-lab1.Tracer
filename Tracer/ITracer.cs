@@ -14,6 +14,6 @@ namespace TracerClasses
         void StopTrace();
 
         // получить результаты измерений
-        List<string> GetTraceResult();
+        List<ThreadDetails> GetTraceResult();
     }
 }

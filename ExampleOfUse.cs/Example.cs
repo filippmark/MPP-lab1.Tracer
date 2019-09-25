@@ -11,11 +11,19 @@ namespace ExampleOfUse
     {
         private static Tracer tracer = new Tracer();
 
-
-        public static void Main(string[] args)
+        public static void Main()
+        {
+            Thread thread1 = new Thread( new ThreadStart(NestedMethod));
+            Thread thread2 = new Thread(new ThreadStart(NestedMethod));
+            thread1.Start();
+            thread2.Start();
+            thread1.Join();
+            thread2.Join();
+        }
+        public static void NestedMethod()
         {
             tracer.StartTrace();
-            Thread.Sleep(11);
+            Thread.Sleep(100);
             FirstNestedMethod();
             tracer.StopTrace();
         }
@@ -23,7 +31,7 @@ namespace ExampleOfUse
         public static void FirstNestedMethod()
         {
             tracer.StartTrace();
-            Thread.Sleep(12);
+            Thread.Sleep(100);
             SecondNestedMethod();
             tracer.StopTrace();
         }
@@ -31,7 +39,7 @@ namespace ExampleOfUse
         public static void SecondNestedMethod()
         {
             tracer.StartTrace();
-            Thread.Sleep(13);
+            Thread.Sleep(100);
             tracer.StopTrace();
         }
 

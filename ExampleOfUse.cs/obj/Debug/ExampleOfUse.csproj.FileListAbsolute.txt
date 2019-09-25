@@ -5,3 +5,11 @@ C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\bin\Debug\Tracer.pdb
 C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.csprojResolveAssemblyReference.cache
 C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.cs.dll
 C:\Users\lenovo\Desktop\mpp.lab1\Solution1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.cs.pdb
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\bin\Debug\ExampleOfUse.cs.dll
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\bin\Debug\ExampleOfUse.cs.pdb
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\bin\Debug\Tracer.dll
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\bin\Debug\Tracer.pdb
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.csprojAssemblyReference.cache
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.csproj.CopyComplete
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.cs.dll
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.cs.pdb

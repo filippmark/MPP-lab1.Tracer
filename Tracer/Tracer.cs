@@ -27,6 +27,7 @@ namespace TracerClasses
             Method method = new Method(methodName, className);
             int id = Thread.CurrentThread.ManagedThreadId;
             ThreadDetails thread = new ThreadDetails(id);
+            AddMethodToTracerDictionary(id, thread, method);
         }
 
         private void AddMethodToTracerDictionary(int id, ThreadDetails thread, Method method)
@@ -47,6 +48,7 @@ namespace TracerClasses
         {
             int id = Thread.CurrentThread.ManagedThreadId;
             ThreadDetails thread = new ThreadDetails(id);
+            RemoveMethodFromTracerDictionary(id, thread);
         }
 
         public void RemoveMethodFromTracerDictionary(int id, ThreadDetails thread)
@@ -59,9 +61,14 @@ namespace TracerClasses
         }
 
 
-        public List<string> GetTraceResult()
+        public List<ThreadDetails> GetTraceResult()
         {
-            return new List<string>();
+            List<ThreadDetails> result = new List<ThreadDetails>();
+            foreach(var thread in threads)
+            {
+                result.Add(thread.Value);
+            }
+            return result;
         }
 
 

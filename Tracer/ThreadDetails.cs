@@ -28,6 +28,7 @@ namespace TracerClasses
                 topMethod.AddNestedMethod(method);
             }
             RunningMethods.Push(method);
+            method.StartTrace();
         }
           
         public void StopTraceMethod()
@@ -37,7 +38,7 @@ namespace TracerClasses
                 Method executedMethod = RunningMethods.Pop();
                 executedMethod.StopTrace();
                 ExecutionTime += executedMethod.ExecutionTime;
-                Console.WriteLine("{0} ms",executedMethod.ExecutionTime);
+                Console.WriteLine("{0} ms, {1} id", executedMethod.ExecutionTime, Id);
                 if (RunningMethods.Count == 1)
                 {
                     RootMethods.Add(executedMethod);

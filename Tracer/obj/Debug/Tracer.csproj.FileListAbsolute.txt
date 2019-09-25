@@ -2,3 +2,8 @@ C:\Users\lenovo\Desktop\mpp.lab1\Solution1\Tracer\bin\Debug\Tracer.dll
 C:\Users\lenovo\Desktop\mpp.lab1\Solution1\Tracer\bin\Debug\Tracer.pdb
 C:\Users\lenovo\Desktop\mpp.lab1\Solution1\Tracer\obj\Debug\Tracer.dll
 C:\Users\lenovo\Desktop\mpp.lab1\Solution1\Tracer\obj\Debug\Tracer.pdb
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\bin\Debug\Tracer.dll
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\bin\Debug\Tracer.pdb
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.dll
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.pdb
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.csprojAssemblyReference.cache
