@@ -24,7 +24,6 @@ namespace TracerClasses.Serializer
                     XElement xmlMethod = SerializeMethod(rootMethod);
                     xmlThread.Add(xmlMethod);
                 }
-                Console.WriteLine(xmlThread.ToString());
                 xmlThreads.Add(xmlThread);
             }
         }
@@ -40,6 +39,22 @@ namespace TracerClasses.Serializer
                 xmlMethod.Add(SerializeMethod(nestedMethod));
             }
             return xmlMethod;
+        }
+
+        public void SerializeResultAndPutToFile(List<ThreadDetails> threadsResult)
+        {
+            SerializeResult(threadsResult);
+        }
+
+        public void SerializeResultAndPutToConsole(List<ThreadDetails> threadsResult)
+        {
+            SerializeResult(threadsResult);
+            XElement root = new XElement("root");
+            foreach(var thread in xmlThreads)
+            {
+                root.Add(thread);
+            }
+            Console.WriteLine(root);
         }
     }
 }

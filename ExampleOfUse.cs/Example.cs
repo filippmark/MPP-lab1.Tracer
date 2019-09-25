@@ -7,7 +7,8 @@ namespace ExampleOfUse
     public class Example
     {
         private static Tracer tracer = new Tracer();
-        private static XMLSerializer serializer = new XMLSerializer();
+        //private static JSONSerializer serializer = new JSONSerializer();
+        private static ISerialize serializer = new XMLSerializer();
 
         public static void Main()
         {
@@ -17,7 +18,7 @@ namespace ExampleOfUse
             thread2.Start();
             thread1.Join();
             thread2.Join();
-            serializer.SerializeResult(tracer.GetTraceResult());
+            serializer.SerializeResultAndPutToConsole(tracer.GetTraceResult());
         }
         public static void NestedMethod()
         {

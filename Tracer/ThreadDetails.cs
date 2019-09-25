@@ -11,10 +11,13 @@ namespace TracerClasses
         public Stack<Method> RunningMethods { get; private set; }
         public List<Method> RootMethods { get; private set; }
 
+        public int MaxStackDeep { get; private set; } 
+
         public ThreadDetails(int id)
         {
             Id = id;
             ExecutionTime = 0;
+            MaxStackDeep = 0;
             RunningMethods = new Stack<Method>();
             RootMethods = new List<Method>();
         }
@@ -28,6 +31,10 @@ namespace TracerClasses
             }
             RunningMethods.Push(method);
             method.StartTrace();
+            if (RunningMethods.Count > MaxStackDeep )
+            {
+                MaxStackDeep = RunningMethods.Count;
+            }
         }
 
         public void StopTraceMethod()

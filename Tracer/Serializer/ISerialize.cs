@@ -2,9 +2,10 @@
 
 namespace TracerClasses.Serializer
 {
-    interface ISerialize
+    public interface ISerialize
     {
-        void SerializeResult(List<ThreadDetails> threadsResult);
+        void SerializeResultAndPutToFile(List<ThreadDetails> threadsResult);
+        void SerializeResultAndPutToConsole(List<ThreadDetails> threadsResult);
 
     }
 }

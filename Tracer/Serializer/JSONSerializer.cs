@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace TracerClasses.Serializer
 {
-    public class JSONSerializer
+    public class JSONSerializer : ISerialize
     {
         private List<ThreadDetails> threads;
         private List<JObject> jsonThreads;
@@ -24,7 +24,6 @@ namespace TracerClasses.Serializer
                     jsonMethods.Add(jsonMethod);
                 }
                 jsonThread["methods"] = jsonMethods;
-                Console.WriteLine(jsonThread.ToString());
                 jsonThreads.Add(jsonThread);
             }
         }
@@ -44,6 +43,22 @@ namespace TracerClasses.Serializer
             return jsonMethod;
         }
 
+        public void SerializeResultAndPutToFile(List<ThreadDetails> threadsResult)
+        {
+            SerializeResult(threadsResult);
+        }
 
+        public void SerializeResultAndPutToConsole(List<ThreadDetails> threadsResult)
+        {
+            SerializeResult(threadsResult);
+            JObject root = new JObject();
+            JArray threads = new JArray();
+            foreach(var thread in jsonThreads)
+            {
+                threads.Add(thread);
+            }
+            root["threads"] = threads;
+            Console.WriteLine(root);
+        }
     }
 }
