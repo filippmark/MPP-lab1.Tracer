@@ -1,5 +1,4 @@
 ﻿using ExampleOfUse;
-using System;
 
 namespace example
 {

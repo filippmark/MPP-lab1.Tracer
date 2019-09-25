@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace TracerClasses.Serializer
 {
-    class XMLSerializer: ISerialize
+    class XMLSerializer : ISerialize
     {
-
-        void ISerialize.SerializeResult()
+        public void SerializeResult(List<ThreadDetails> threadsResult)
         {
             throw new NotImplementedException();
         }

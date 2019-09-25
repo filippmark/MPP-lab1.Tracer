@@ -1,15 +1,42 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace TracerClasses.Serializer
 {
-    class JSONSerializer: ISerialize
+    public class JSONSerializer : ISerialize
     {
-        void ISerialize.SerializeResult()
+        private List<ThreadDetails> threads;
+
+        public void SerializeResult(List<ThreadDetails> threadsResult)
         {
-            throw new NotImplementedException();
+            threads = threadsResult;
+            foreach (var thread in threads)
+            {
+                foreach (var rootMethod in thread.RootMethods)
+                {
+                    Console.WriteLine(rootMethod.Name);
+                    JObject jsonMethod = SerializeMethod(rootMethod);
+                    Console.WriteLine(jsonMethod.ToString());
+                }
+            }
         }
+
+        public JObject SerializeMethod(Method method)
+        {
+            JObject jsonMethod = new JObject();
+            jsonMethod["Name"] = method.Name;
+            jsonMethod["Class"] = method.ClassName;
+            jsonMethod["Time"] = method.ExecutionTime;
+            JArray methods = new JArray();
+            foreach (var nestedMethod in method.NestedMethods)
+            {
+                methods.Add(SerializeMethod(nestedMethod));
+            }
+            jsonMethod["Methods"] = methods;
+            return jsonMethod;
+        }
+
+
     }
 }

@@ -1,10 +1,8 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Diagnostics;
 using System.Reflection;
-using System.Collections.Concurrent;
 using System.Threading;
 
 namespace TracerClasses
@@ -56,7 +54,7 @@ namespace TracerClasses
             if (threads.ContainsKey(id))
             {
                 threads.TryGetValue(id, out thread);
-                thread.StopTraceMethod();     
+                thread.StopTraceMethod();
             }
         }
 
@@ -64,9 +62,16 @@ namespace TracerClasses
         public List<ThreadDetails> GetTraceResult()
         {
             List<ThreadDetails> result = new List<ThreadDetails>();
-            foreach(var thread in threads)
+            try
             {
-                result.Add(thread.Value);
+                foreach (var thread in threads)
+                {
+                    result.Add(thread.Value);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
             }
             return result;
         }

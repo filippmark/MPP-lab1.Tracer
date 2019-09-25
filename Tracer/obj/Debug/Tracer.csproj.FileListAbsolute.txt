@@ -7,3 +7,6 @@ C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\bin\Debug\Tracer.p
 C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.dll
 C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.pdb
 C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.csprojAssemblyReference.cache
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.csproj.CopyComplete

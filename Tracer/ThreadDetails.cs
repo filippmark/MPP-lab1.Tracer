@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace TracerClasses
 {
@@ -11,7 +10,7 @@ namespace TracerClasses
         public long ExecutionTime { get; private set; }
         public Stack<Method> RunningMethods { get; private set; }
         public List<Method> RootMethods { get; private set; }
-        
+
         public ThreadDetails(int id)
         {
             Id = id;
@@ -22,7 +21,7 @@ namespace TracerClasses
 
         public void StartTraceMethod(Method method)
         {
-            if (RunningMethods.Count() != 0 )
+            if (RunningMethods.Count() != 0)
             {
                 Method topMethod = RunningMethods.Peek();
                 topMethod.AddNestedMethod(method);
@@ -30,7 +29,7 @@ namespace TracerClasses
             RunningMethods.Push(method);
             method.StartTrace();
         }
-          
+
         public void StopTraceMethod()
         {
             if (RunningMethods.Count > 0)
@@ -39,7 +38,7 @@ namespace TracerClasses
                 executedMethod.StopTrace();
                 ExecutionTime += executedMethod.ExecutionTime;
                 Console.WriteLine("{0} ms, {1} id", executedMethod.ExecutionTime, Id);
-                if (RunningMethods.Count == 1)
+                if (RunningMethods.Count == 0)
                 {
                     RootMethods.Add(executedMethod);
                 }

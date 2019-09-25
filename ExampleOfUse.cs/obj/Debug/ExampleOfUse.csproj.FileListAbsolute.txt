@@ -13,3 +13,5 @@ C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\obj\Debug
 C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.csproj.CopyComplete
 C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.cs.dll
 C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\obj\Debug\ExampleOfUse.cs.pdb
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\ExampleOfUse.cs\bin\Debug\Newtonsoft.Json.xml
