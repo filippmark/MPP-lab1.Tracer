@@ -49,7 +49,7 @@ namespace TracerClasses
             RemoveMethodFromTracerDictionary(id, thread);
         }
 
-        public void RemoveMethodFromTracerDictionary(int id, ThreadDetails thread)
+        private void RemoveMethodFromTracerDictionary(int id, ThreadDetails thread)
         {
             if (threads.ContainsKey(id))
             {

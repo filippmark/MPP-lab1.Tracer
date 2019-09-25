@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Linq;
 
 namespace TracerClasses.Serializer
@@ -10,7 +11,7 @@ namespace TracerClasses.Serializer
         private List<XElement> xmlThreads;
 
 
-        public void SerializeResult(List<ThreadDetails> threadsResult)
+        private void SerializeResult(List<ThreadDetails> threadsResult)
         {
             threads = threadsResult;
             xmlThreads = new List<XElement>();
@@ -28,7 +29,7 @@ namespace TracerClasses.Serializer
             }
         }
         
-        public XElement SerializeMethod(Method method)
+        private XElement SerializeMethod(Method method)
         {
             XElement xmlMethod = new XElement("method", 
                 new XAttribute("name", method.Name),
@@ -44,17 +45,25 @@ namespace TracerClasses.Serializer
         public void SerializeResultAndPutToFile(List<ThreadDetails> threadsResult)
         {
             SerializeResult(threadsResult);
+            XDocument root = new XDocument(MakeRoot());
+            root.Save(AppDomain.CurrentDomain.BaseDirectory + @"\" + "xml.txt");
         }
 
         public void SerializeResultAndPutToConsole(List<ThreadDetails> threadsResult)
         {
             SerializeResult(threadsResult);
+            Console.WriteLine(MakeRoot());
+            Console.WriteLine(Directory.GetCurrentDirectory());
+        }
+
+        private XElement MakeRoot()
+        {
             XElement root = new XElement("root");
-            foreach(var thread in xmlThreads)
+            foreach (var thread in xmlThreads)
             {
                 root.Add(thread);
             }
-            Console.WriteLine(root);
+            return root;
         }
     }
 }

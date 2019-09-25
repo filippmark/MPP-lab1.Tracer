@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace TracerClasses.Serializer
 {
@@ -8,7 +10,7 @@ namespace TracerClasses.Serializer
     {
         private List<ThreadDetails> threads;
         private List<JObject> jsonThreads;
-        public void SerializeResult(List<ThreadDetails> threadsResult)
+        private void SerializeResult(List<ThreadDetails> threadsResult)
         {
             threads = threadsResult;
             jsonThreads = new List<JObject>();
@@ -28,7 +30,7 @@ namespace TracerClasses.Serializer
             }
         }
 
-        public JObject SerializeMethod(Method method)
+        private JObject SerializeMethod(Method method)
         {
             JObject jsonMethod = new JObject();
             jsonMethod["Name"] = method.Name;
@@ -46,19 +48,30 @@ namespace TracerClasses.Serializer
         public void SerializeResultAndPutToFile(List<ThreadDetails> threadsResult)
         {
             SerializeResult(threadsResult);
+            using (StreamWriter file = File.CreateText(AppDomain.CurrentDomain.BaseDirectory + @"\" + "json.txt"))
+            using (JsonTextWriter writer = new JsonTextWriter(file))
+            {
+                MakeRoot().WriteTo(writer);
+            }
         }
 
         public void SerializeResultAndPutToConsole(List<ThreadDetails> threadsResult)
         {
             SerializeResult(threadsResult);
+            Console.WriteLine(MakeRoot());
+        }
+
+        private JObject MakeRoot()
+        {
             JObject root = new JObject();
             JArray threads = new JArray();
-            foreach(var thread in jsonThreads)
+            foreach (var thread in jsonThreads)
             {
                 threads.Add(thread);
             }
             root["threads"] = threads;
-            Console.WriteLine(root);
+            return root;
         }
+
     }
 }
