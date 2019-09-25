@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace TracerClasses.Serializer
 {
-    public class JSONSerializer : ISerialize
+    public class JSONSerializer
     {
         private List<ThreadDetails> threads;
         private List<JObject> jsonThreads;
@@ -16,6 +16,7 @@ namespace TracerClasses.Serializer
             {
                 JObject jsonThread = new JObject();
                 jsonThread["id"] = thread.Id;
+                jsonThread["time"] = thread.ExecutionTime;
                 JArray jsonMethods = new JArray();
                 foreach (var rootMethod in thread.RootMethods)
                 {

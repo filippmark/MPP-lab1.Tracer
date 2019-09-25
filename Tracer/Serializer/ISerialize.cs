@@ -5,5 +5,6 @@ namespace TracerClasses.Serializer
     interface ISerialize
     {
         void SerializeResult(List<ThreadDetails> threadsResult);
+
     }
 }

@@ -7,7 +7,7 @@ namespace ExampleOfUse
     public class Example
     {
         private static Tracer tracer = new Tracer();
-        private static JSONSerializer serializer = new JSONSerializer();
+        private static XMLSerializer serializer = new XMLSerializer();
 
         public static void Main()
         {
@@ -32,6 +32,7 @@ namespace ExampleOfUse
             tracer.StartTrace();
             Thread.Sleep(100);
             SecondNestedMethod();
+            ThirdNestedMethod();
             tracer.StopTrace();
         }
 
@@ -42,5 +43,11 @@ namespace ExampleOfUse
             tracer.StopTrace();
         }
 
+        public static void ThirdNestedMethod()
+        {
+            tracer.StartTrace();
+            Thread.Sleep(200);
+            tracer.StopTrace();
+        }
     }
 }
