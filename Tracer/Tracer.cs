@@ -5,15 +5,15 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Threading;
 
-namespace TracerClasses
+namespace TracerImplementation
 {
     public class Tracer : ITracer
     {
-        private ConcurrentDictionary<int, ThreadDetails> threads;
+        private ConcurrentDictionary<int, ThreadDetails> _threads;
 
         public Tracer()
         {
-            threads = new ConcurrentDictionary<int, ThreadDetails>();
+            _threads = new ConcurrentDictionary<int, ThreadDetails>();
         }
 
         public void StartTrace()
@@ -30,15 +30,15 @@ namespace TracerClasses
 
         private void AddMethodToTracerDictionary(int id, ThreadDetails thread, Method method)
         {
-            if (threads.ContainsKey(id))
+            if (_threads.ContainsKey(id))
             {
-                threads.TryGetValue(id, out thread);
+                _threads.TryGetValue(id, out thread);
                 thread.StartTraceMethod(method);
             }
             else
             {
                 thread.StartTraceMethod(method);
-                threads.TryAdd(id, thread);
+                _threads.TryAdd(id, thread);
             }
         }
 
@@ -51,9 +51,9 @@ namespace TracerClasses
 
         private void RemoveMethodFromTracerDictionary(int id, ThreadDetails thread)
         {
-            if (threads.ContainsKey(id))
+            if (_threads.ContainsKey(id))
             {
-                threads.TryGetValue(id, out thread);
+                _threads.TryGetValue(id, out thread);
                 thread.StopTraceMethod();
             }
         }
@@ -64,7 +64,7 @@ namespace TracerClasses
             List<ThreadDetails> result = new List<ThreadDetails>();
             try
             {
-                foreach (var thread in threads)
+                foreach (var thread in _threads)
                 {
                     result.Add(thread.Value);
                 }

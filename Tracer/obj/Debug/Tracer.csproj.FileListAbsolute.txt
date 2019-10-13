@@ -10,3 +10,11 @@ C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.c
 C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.csproj.CopyComplete
 C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.dll
 C:\Users\Filip.Markovich\Source\Repos\MPP-lab1.Tracer1\Tracer\obj\Debug\Tracer.pdb
+C:\Users\lenovo\Source\Repos\MPP-lab1.Tracer0\Tracer\bin\Debug\Tracer.dll
+C:\Users\lenovo\Source\Repos\MPP-lab1.Tracer0\Tracer\bin\Debug\Tracer.pdb
+C:\Users\lenovo\Source\Repos\MPP-lab1.Tracer0\Tracer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lenovo\Source\Repos\MPP-lab1.Tracer0\Tracer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lenovo\Source\Repos\MPP-lab1.Tracer0\Tracer\obj\Debug\Tracer.csprojAssemblyReference.cache
+C:\Users\lenovo\Source\Repos\MPP-lab1.Tracer0\Tracer\obj\Debug\Tracer.csproj.CopyComplete
+C:\Users\lenovo\Source\Repos\MPP-lab1.Tracer0\Tracer\obj\Debug\Tracer.dll
+C:\Users\lenovo\Source\Repos\MPP-lab1.Tracer0\Tracer\obj\Debug\Tracer.pdb

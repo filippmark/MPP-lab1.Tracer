@@ -4,17 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace TracerClasses.Serializer
+namespace TracerImplementation.Serializer
 {
     public class JSONSerializer : ISerialize
     {
-        private List<ThreadDetails> threads;
-        private List<JObject> jsonThreads;
-        private void SerializeResult(List<ThreadDetails> threadsResult)
+        private List<ThreadDetails> _threads;
+        private List<JObject> _jsonThreads;
+        public string SerializeResult(List<ThreadDetails> threadsResult)
         {
-            threads = threadsResult;
-            jsonThreads = new List<JObject>();
-            foreach (var thread in threads)
+            _threads = threadsResult;
+            _jsonThreads = new List<JObject>();
+            foreach (var thread in _threads)
             {
                 JObject jsonThread = new JObject();
                 jsonThread["id"] = thread.Id;
@@ -26,8 +26,9 @@ namespace TracerClasses.Serializer
                     jsonMethods.Add(jsonMethod);
                 }
                 jsonThread["methods"] = jsonMethods;
-                jsonThreads.Add(jsonThread);
+                _jsonThreads.Add(jsonThread);
             }
+            return MakeRoot().ToString();
         }
 
         private JObject SerializeMethod(Method method)
@@ -45,27 +46,11 @@ namespace TracerClasses.Serializer
             return jsonMethod;
         }
 
-        public void SerializeResultAndPutToFile(List<ThreadDetails> threadsResult)
-        {
-            SerializeResult(threadsResult);
-            using (StreamWriter file = File.CreateText(AppDomain.CurrentDomain.BaseDirectory + @"\" + "json.txt"))
-            using (JsonTextWriter writer = new JsonTextWriter(file))
-            {
-                MakeRoot().WriteTo(writer);
-            }
-        }
-
-        public void SerializeResultAndPutToConsole(List<ThreadDetails> threadsResult)
-        {
-            SerializeResult(threadsResult);
-            Console.WriteLine(MakeRoot());
-        }
-
         private JObject MakeRoot()
         {
             JObject root = new JObject();
             JArray threads = new JArray();
-            foreach (var thread in jsonThreads)
+            foreach (var thread in _jsonThreads)
             {
                 threads.Add(thread);
             }

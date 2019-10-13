@@ -47,7 +47,9 @@
     <Compile Include="Method.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serializer\ISerialize.cs" />
+    <Compile Include="Serializer\IWriter.cs" />
     <Compile Include="Serializer\JSONSerializer.cs" />
+    <Compile Include="Serializer\Writer.cs" />
     <Compile Include="Serializer\XMLSerializer.cs" />
     <Compile Include="ThreadDetails.cs" />
     <Compile Include="Tracer.cs" />

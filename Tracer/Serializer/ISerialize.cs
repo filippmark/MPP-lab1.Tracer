@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace TracerClasses.Serializer
+namespace TracerImplementation.Serializer
 {
     public interface ISerialize
     {
-        void SerializeResultAndPutToFile(List<ThreadDetails> threadsResult);
-        void SerializeResultAndPutToConsole(List<ThreadDetails> threadsResult);
-
+        string SerializeResult(List<ThreadDetails> threadsResult);
+       
     }
 }

@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 
-namespace TracerClasses.Serializer
+namespace TracerImplementation.Serializer
 {
     public class XMLSerializer : ISerialize
     {
-        private List<ThreadDetails> threads;
-        private List<XElement> xmlThreads;
+        private List<ThreadDetails> _threads;
+        private List<XElement> _xmlThreads;
 
 
-        private void SerializeResult(List<ThreadDetails> threadsResult)
+        public string SerializeResult(List<ThreadDetails> threadsResult)
         {
-            threads = threadsResult;
-            xmlThreads = new List<XElement>();
-            foreach (var thread in threads)
+            _threads = threadsResult;
+            _xmlThreads = new List<XElement>();
+            foreach (var thread in _threads)
             {
                 XElement xmlThread = new XElement("thread",
                     new XAttribute("id", thread.Id),
@@ -25,8 +25,9 @@ namespace TracerClasses.Serializer
                     XElement xmlMethod = SerializeMethod(rootMethod);
                     xmlThread.Add(xmlMethod);
                 }
-                xmlThreads.Add(xmlThread);
+                _xmlThreads.Add(xmlThread);
             }
+            return MakeRoot().ToString();
         }
         
         private XElement SerializeMethod(Method method)
@@ -42,28 +43,15 @@ namespace TracerClasses.Serializer
             return xmlMethod;
         }
 
-        public void SerializeResultAndPutToFile(List<ThreadDetails> threadsResult)
-        {
-            SerializeResult(threadsResult);
-            XDocument root = new XDocument(MakeRoot());
-            root.Save(AppDomain.CurrentDomain.BaseDirectory + @"\" + "xml.txt");
-        }
-
-        public void SerializeResultAndPutToConsole(List<ThreadDetails> threadsResult)
-        {
-            SerializeResult(threadsResult);
-            Console.WriteLine(MakeRoot());
-            Console.WriteLine(Directory.GetCurrentDirectory());
-        }
-
         private XElement MakeRoot()
         {
             XElement root = new XElement("root");
-            foreach (var thread in xmlThreads)
+            foreach (var thread in _xmlThreads)
             {
                 root.Add(thread);
             }
             return root;
         }
+
     }
 }

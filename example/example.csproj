@@ -6,8 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExampleOfUse.cs\ExampleOfUse.csproj" />
-    <ProjectReference Include="..\Tracer\Tracer.csproj" />
+    <ProjectReference Include="..\Tracer\TracerImplementation.csproj" />
   </ItemGroup>
 
 </Project>
